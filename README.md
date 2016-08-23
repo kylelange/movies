@@ -20,9 +20,9 @@ Program will have prototype for the Ticket objects named Cost that will calculat
 * Example Input: {Steve, 36, Ghostbusters, [1], price}
 * Example Output: price = $3.00;
 
-User will input their name, age, movie time, and movie and receive the price of their ticket back.
+User will input their name, age, movie, and movie time and receive the price of their ticket back.
 * Example Input: {Steve, 36, Ghostbusters, [1], price}
-* Example Output: price = $3.00 but in the UI!;
+* Example Output: price = $12.00 but in the UI!;
 
 Users will have the option to change the ticket times or cancel the ticket.
 * Example Input: {Steve, 36, Ghostbusters, [1], price}

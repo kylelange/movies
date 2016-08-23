@@ -7,17 +7,36 @@
     <script src='js/jquery-3.1.0.js'></script>
     <script src='js/bootstrap.min.js' type='text/javascript'></script>
     <script src='js/scripts.js'></script>
-    <title>Template</title>
+    <title>Movie Tickets</title>
   </head>
   <body>
 
     <!-- Simple Form Input for Testing -->
     <div class="container">
-      <h1>Form Input</h1>
+      <h1>Movie Tickets!</h1>
       <form id="inputForm">
         <div class="form-group">
-          <label for="input">Enter input</label>
-          <input id="input" class="form-control" type="text">
+          <label for="name-input">Enter name</label>
+          <input id="name-input" class="form-control" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="age-input">Enter Age</label>
+          <input id="age-input" class="form-control" type="number" required>
+        </div>
+        <div class="form-group">
+          <label for="movie-select">Select Movie</label>
+          <select id="movie-select" class = "form-control">
+            <option value = "0">Ghostbusters 2016</option>
+            <option value = "1">Star Wars: A New Hope</option>
+            <option value = "2">Star Trek Beyond</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time-select">Select Time</label>
+          <select id="time-select" class = "form-control">
+            <option value = "0">Matinee</option>
+            <option value = "1">Evening</option>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
