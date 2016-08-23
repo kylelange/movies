@@ -13,7 +13,27 @@ function Ticket = (_name, _age, _movie, _time) {
   this.name = _name;
   this.age = _age;
   this.movie = _movie;
+  this.time = _time;
 }
+ Ticket.prototype.cost = function() {
+   if (!this.movie.firstRun){
+     return 3;
+   } else {
+     if (!this.time) {
+       if (this.age < 16 || this.age > 55) {
+         return 7;
+       } else {
+         return 9;
+       }
+     } else {
+       if (this.age < 16 || this.age > 55) {
+         return 10;
+       } else {
+         return 12;
+       }
+     }
+   }
+ }
 
 //<!-- Front End  -->
 $(document).ready(function(){
