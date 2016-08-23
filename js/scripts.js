@@ -61,17 +61,24 @@ $(document).ready(function(){
     var totalCost = 0;
     var counter = 0;
     tickets.forEach(function(ticket){
-      $("#result ul").append("<li><input type='checkbox' value='" + counter + "'> " + ticket.movie.movie+" at "+ticket.movie.times[timeSelect]+". This is going to cost you $"+ticket.cost() + "</li>");
-      totalCost += ticket.cost();
+      if(ticket){
+        $("#result ul").append("<li><input type='checkbox' value='" + counter + "'> " + ticket.movie.movie+" at "+ticket.movie.times[timeSelect]+". This is going to cost you $"+ticket.cost() + "</li>");
+        totalCost += ticket.cost();
+      }
       counter++;
     });
-    $("#result").append("<h2>Total Cost = "+totalCost+"</h2>");
+    $("#result").append("<h2>Total Cost = $"+totalCost+"</h2>");
     $("#delete").show();
 
   });
   $("#delete").click(function(){
     //debugger;
     var checked = $("#result input:checked").parent();
+    checked.each(function(){
+      var index = parseInt($(this).children("input").val());
+      tickets[index] = "";
+      console.log(parseInt($(this).children("input").val()));
+    });
     console.log(checked);
     checked.remove();
   });
