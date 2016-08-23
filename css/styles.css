@@ -1,4 +1,45 @@
 
-#delete {
+html, body {
+  height: 100%;
+}
+
+body {
+  background: url(../img/theater.jpeg) no-repeat center center fixed;
+  origin background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat fixed;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+li {
+  font-size: 1.25em;
+  list-style-type: none;
+}
+
+label, input, select {
+  font-size: 1.25em;
+  letter-spacing: 2px;
+}
+
+.container {
+  background-color: rgba(255,255,255,0.5);
+  background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0.03), rgba(255,255,255,0));
+  height: 100%;
+  color: white;
+}
+
+#delete, #restart {
   display: none;
 }
+
+#delete:active, #delete:focus, #delete.active:focus {
+   outline: 0 none;
+   box-shadow: inset 0 1px 10px rgba(0,0,0,0.6);
+ }
