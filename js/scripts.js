@@ -55,6 +55,6 @@ $(document).ready(function(){
     //   userMovie = starTrekBeyond;
     // }
     var newTicket = new Ticket (userName, userAge, movies[movieSelect], timeSelect);
-    console.log(newTicket);
+    $("#result p").text(newTicket.name+ ", you are going to see "+ newTicket.movie.movie+" at "+newTicket.movie.times[timeSelect]+". This is going to cost you $"+newTicket.cost()+".");
   });
 });
