@@ -39,7 +39,11 @@ label, input, select {
   display: none;
 }
 
-#delete:active, #delete:focus, #delete.active:focus {
+#restart {
+  margin-left: 15px;
+}
+
+#submit:active, #submit:focus, #delete:active, #delete:focus, #restart:active, #restart:focus {
    outline: 0 none;
    box-shadow: inset 0 1px 10px rgba(0,0,0,0.6);
  }

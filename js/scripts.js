@@ -37,6 +37,7 @@ function Ticket(_name, _age, _movie, _time) {
    }
  }
 var tickets = [];
+
 //<!-- Front End  -->
 $(document).ready(function(){
   $("form#inputForm").submit(function(event){
@@ -69,8 +70,10 @@ $(document).ready(function(){
     });
     $("#result").append("<h2>Total Cost = $"+totalCost+"</h2>");
     $("#delete").show();
-
+    $(".currentUser").text(newTicket.name);
+    $("#restart").show();
   });
+//On "delete selected" button press, finds checked tickets, removes them from ui, and sets the corresponding indices to null
   $("#delete").click(function(){
     //debugger;
     var checked = $("#result input:checked").parent();
@@ -82,5 +85,13 @@ $(document).ready(function(){
     console.log(checked);
     checked.remove();
   });
-
+//This function clears the screen from the previous user
+  $("#restart").click(function(event){
+    event.preventDefault();
+    tickets = [];
+    $("#result").empty();
+    $("form")[0].reset();
+    $("#restart").hide();
+    $("#delete").hide();
+  });
 });
