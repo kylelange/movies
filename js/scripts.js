@@ -41,7 +41,7 @@ var tickets = [];
 $(document).ready(function(){
   $("form#inputForm").submit(function(event){
     event.preventDefault();
-
+    $("#result").empty();
     var userName = $("#name-input").val();
     var userAge = parseInt($("#age-input").val());
     var movieSelect = parseInt($("#movie-select").val());
@@ -57,10 +57,23 @@ $(document).ready(function(){
     var newTicket = new Ticket (userName, userAge, movies[movieSelect], timeSelect);
     tickets.push(newTicket);
     // $("#result p").text(newTicket.name+ ", you are going to see "+ newTicket.movie.movie+" at "+newTicket.movie.times[timeSelect]+". This is going to cost you $"+newTicket.cost()+".");
-    $("#result").append("<h2>" + newTicket.name + ", here are your tickets:</h2><ul></ul><h2>Total Cost = </h2>");
+    $("#result").append("<h2>" + newTicket.name + ", here are your tickets:</h2><ul></ul>");
+    var totalCost = 0;
+    var counter = 0;
     tickets.forEach(function(ticket){
-      $("#result ul").append("<li>" + ticket.movie.movie+" at "+ticket.movie.times[timeSelect]+". This is going to cost you $"+ticket.cost() + "</li>");
+      $("#result ul").append("<li><input type='checkbox' value='" + counter + "'> " + ticket.movie.movie+" at "+ticket.movie.times[timeSelect]+". This is going to cost you $"+ticket.cost() + "</li>");
+      totalCost += ticket.cost();
+      counter++;
     });
+    $("#result").append("<h2>Total Cost = "+totalCost+"</h2>");
+    $("#delete").show();
 
   });
+  $("#delete").click(function(){
+    //debugger;
+    var checked = $("#result input:checked").parent();
+    console.log(checked);
+    checked.remove();
+  });
+
 });
