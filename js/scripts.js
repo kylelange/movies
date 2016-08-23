@@ -36,7 +36,7 @@ function Ticket(_name, _age, _movie, _time) {
      }
    }
  }
-
+var tickets = [];
 //<!-- Front End  -->
 $(document).ready(function(){
   $("form#inputForm").submit(function(event){
@@ -55,6 +55,12 @@ $(document).ready(function(){
     //   userMovie = starTrekBeyond;
     // }
     var newTicket = new Ticket (userName, userAge, movies[movieSelect], timeSelect);
-    $("#result p").text(newTicket.name+ ", you are going to see "+ newTicket.movie.movie+" at "+newTicket.movie.times[timeSelect]+". This is going to cost you $"+newTicket.cost()+".");
+    tickets.push(newTicket);
+    // $("#result p").text(newTicket.name+ ", you are going to see "+ newTicket.movie.movie+" at "+newTicket.movie.times[timeSelect]+". This is going to cost you $"+newTicket.cost()+".");
+    $("#result").append("<h2>" + newTicket.name + ", here are your tickets:</h2><ul></ul><h2>Total Cost = </h2>");
+    tickets.forEach(function(ticket){
+      $("#result ul").append("<li>" + ticket.movie.movie+" at "+ticket.movie.times[timeSelect]+". This is going to cost you $"+ticket.cost() + "</li>");
+    });
+
   });
 });
