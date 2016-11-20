@@ -6,6 +6,11 @@
 
 _A movie ticket buying website - object practice (objects within objects)_
 
+#### See it live [HERE](https://kylelange.github.io/movies/).
+_
+
+![screenshot](Screen Shot.png)
+
 ### Specifications
 
 Program will have movie objects with the name, the times, and whether they are first or second run
@@ -37,6 +42,22 @@ User will have the ability to buy multiple tickets and see the ticket details fo
 
 * _Copy the repository from GitHub_
 * _Open the index.html file a browser of your choice_
+
+
+## Known Bugs
+
+_There are no known bugs as of the last commit. Please send an ISSUE on github in the repository if you see something I have not._
+
+## Support and contact details
+
+For questions, concerns, or suggestions please email baronsintrees@gmail.com
+
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript with jQuery 3.1
 
 ## Licensing
 
